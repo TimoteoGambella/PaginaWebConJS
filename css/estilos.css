@@ -1,0 +1,1175 @@
+/*
+PALETA DE COLORES:
+	NEGRO=BLACK
+	BLANCO=WHITE
+	DORADO= #E3B237
+	AMARILLO FUERTE= #FFB908
+
+FUENTE:
+	font-family: 'New Rocker', cursive;
+*/
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
+@-webkit-keyframes tituloAgranda {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes tituloAgranda {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes tituloMapa {
+  0% {
+    color: #E3B237;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: #E3B237;
+  }
+}
+
+@keyframes tituloMapa {
+  0% {
+    color: #E3B237;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: #E3B237;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-principal {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#FFB908), to(black));
+  background: linear-gradient(black, #FFB908, black);
+}
+
+#body {
+  min-height: 100vh;
+  background: black;
+}
+
+.encabezado {
+  min-height: 15vw;
+}
+
+.encabezado img {
+  width: 12vw;
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+  mix-blend-mode: multiply;
+}
+
+.encabezado #fotologo {
+  padding-left: 8vw;
+}
+
+.encabezado .titulo {
+  font-size: 7vw;
+  font-family: "New Rocker", cursive;
+  width: 100%;
+  -webkit-animation-name: tituloAgranda;
+          animation-name: tituloAgranda;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.nav {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  min-height: 5vw;
+  padding: 20px 0px;
+}
+
+.nav .a1 {
+  font-family: "New Rocker", cursive;
+  color: black;
+  font-size: 2vw;
+  text-align: center;
+  font-weight: 750;
+  padding: 0vw 1vw;
+  border-radius: 40px;
+}
+
+.nav .a1 :hover {
+  background: #E3B237;
+  border: 1px solid #000;
+}
+
+.nav .seleccionado {
+  background: #E3B237;
+  border: 1px solid #000;
+}
+
+.nav .a1especial {
+  font-family: "New Rocker", cursive;
+  color: black;
+  font-size: 2vw;
+  text-align: center;
+  font-weight: 750;
+  padding: 0vw 1vw;
+  border-radius: 40px;
+}
+
+.navbar-light .navbar-toggler {
+  border: 5px solid black;
+  color: black;
+}
+
+#main {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#FFB908), color-stop(black), color-stop(#FFB908), color-stop(black), color-stop(#FFB908), to(black));
+  background: linear-gradient(black, #FFB908, black, #FFB908, black, #FFB908, black);
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "main1" "main2" "main3";
+  -ms-grid-rows: (50vw)[3];
+      grid-template-rows: repeat(3, 50vw);
+}
+
+.main1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: main1;
+}
+
+.main1 div img {
+  width: 20vw;
+}
+
+.main2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main2;
+}
+
+.main2 div img {
+  width: 12vw;
+  padding: 10px;
+}
+
+.main3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: main3;
+}
+
+.main3 div img {
+  width: 18vw;
+  padding: 15px;
+}
+
+.mainTitulo {
+  font-size: 3vw;
+  font-family: "New Rocker", cursive;
+  color: #E3B237;
+  padding: 5vw 0vw 1vw;
+}
+
+.mainContenido {
+  font-size: 2.5vw;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background: #E3B237;
+  max-height: 29vw;
+  min-width: 80vw;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
+#parrafo {
+  max-width: 50vw;
+  max-height: 20vw;
+  font-size: 1.8vw;
+  font-weight: 800;
+}
+
+#parrafo p {
+  margin: 0px;
+}
+
+#mapaTitulo {
+  font-family: "New Rocker", cursive;
+  color: #E3B237;
+  -webkit-animation-name: tituloMapa;
+          animation-name: tituloMapa;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#mapaTitulo p {
+  font-size: 4vw;
+  text-shadow: 10px 10px 10px #E3B237;
+}
+
+.mapa {
+  margin: 50px;
+  padding: 25px;
+  background: #E3B237;
+  border-radius: 50px;
+}
+
+.mapa iframe {
+  width: 40vw;
+  height: 21vw;
+  border-radius: 50px;
+}
+
+.botonPedido {
+  width: 7.3vw;
+  bottom: 0;
+  right: 0;
+  padding: 1vw 1vw;
+}
+
+.redes {
+  border-top: 1px solid #000;
+  min-height: 8vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#FFB908), to(black));
+  background: linear-gradient(black, #FFB908, black);
+}
+
+.redes div {
+  border: 4px solid black;
+  background: #E3B237;
+  border-radius: 45px;
+  margin: 15px;
+}
+
+.redes div img {
+  width: 4vw;
+  padding: 1vw 0.7vw;
+}
+
+#contacto {
+  padding: 1vw;
+}
+
+form input {
+  height: 2.5vw;
+  font-size: 1.1vw;
+  border: 2px solid #FFB908;
+  color: black;
+}
+
+form label {
+  font-weight: 500;
+  font-size: 2.1vw;
+  vertical-align: top;
+  padding: 0.7vw 0.7vw;
+  color: #E3B237;
+  font-family: "New Rocker", cursive;
+}
+
+textarea {
+  width: 14vw;
+  height: 14vw;
+  resize: none;
+  border: 2px solid #FFB908;
+  font-size: 1.1vw;
+  color: black;
+}
+
+#botones {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1vw;
+}
+
+#botones input {
+  margin: 1vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  font-size: 1.4vw;
+}
+
+#cuerpoContacto {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.menuI {
+  border: 8px solid #FFB908;
+  height: 30vw;
+  width: 55vw;
+  margin: 0.3vw 0vw 3.5vw 1.4vw;
+  border-radius: 5.8vw;
+}
+
+.menuI:hover {
+  border: 8px solid white;
+}
+
+.menuI img {
+  width: 17vw;
+  padding: 2vw;
+  border-radius: 5.8vw;
+}
+
+#descripcion {
+  min-height: 18vw;
+  margin: 15px;
+}
+
+#descripcion #productoTitulo {
+  color: #E3B237;
+  font-size: 3vw;
+  font-family: "New Rocker", cursive;
+  margin: 0px;
+}
+
+#descripcion ul {
+  color: #E3B237;
+  font-size: 1.4vw;
+  font-family: "New Rocker", cursive;
+  margin: 0px;
+  list-style-type: none;
+}
+
+#descripcion #precios {
+  font-size: 2vw;
+  padding: 5px;
+}
+
+#descripcion #precios li {
+  padding: 2px;
+  cursor: pointer;
+}
+
+#descripcion #precios li:hover {
+  color: white;
+}
+
+#botonCarrito {
+  top: 10;
+  right: 0;
+  margin-top: 1vw;
+  margin-right: 1vw;
+  background-color: #FFB908;
+  border: 3px solid black;
+}
+
+#carritoDePedidos {
+  position: fixed;
+  height: 100%;
+  width: 45%;
+  right: 0;
+  background-color: #FFB908;
+  opacity: 0.7;
+  border-radius: 20px 0px 0px 20px;
+}
+
+#carritoDePedidos #botonVolver {
+  padding: 1vw;
+}
+
+#carritoDePedidos .tituloCarrito {
+  color: black;
+  font-size: 3vw;
+  font-family: "New Rocker", cursive;
+  margin: 0px;
+}
+
+#carritoDePedidos .carritoInterno {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 9vw 9vw;
+      grid-template-columns: auto 9vw 9vw;
+  -ms-grid-rows: 2vw auto 2vw;
+      grid-template-rows: 2vw auto 2vw;
+      grid-template-areas: "col1 col2 col3" "fil1 fil1 fil1" "total total fin";
+}
+
+#carritoDePedidos .carritoInterno .col-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: col1;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+  padding-left: 30px;
+}
+
+#carritoDePedidos .carritoInterno .col-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: col2;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+}
+
+#carritoDePedidos .carritoInterno .col-3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: col3;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: fil1;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li {
+  font-family: "New Rocker", cursive;
+  font-weight: 500;
+  list-style: none;
+  overflow: scroll;
+  overflow-x: visible;
+  max-height: 33vw;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li .nombreBurger {
+  min-width: 24vw;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li .nombreTipoBurger {
+  font-size: 1.5vw;
+  min-width: 8vw;
+  text-align: center;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li .precioBurger {
+  min-width: 8vw;
+  text-align: center;
+  margin-left: 60px;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li .extrasBurger {
+  font-weight: 900;
+  cursor: pointer;
+  margin-left: 30px;
+  font-size: 2vw;
+  text-align: center;
+}
+
+#carritoDePedidos .carritoInterno .fil-1 li .signoPedidoCancelar {
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+#carritoDePedidos .carritoInterno ._total {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: total;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+  padding-left: 30px;
+}
+
+#carritoDePedidos .carritoInterno ._fin {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: fin;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+}
+
+#carritoDePedidos .botonConfirmarPedido {
+  background-color: black;
+  color: #E3B237;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+  width: 7vw;
+  height: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 250px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#carritoDePedidos .botonConfirmarPedido:hover {
+  background-color: white;
+  color: black;
+}
+
+.extraDesc {
+  display: inline;
+  position: fixed;
+  min-height: 70%;
+  min-width: 40%;
+  margin-left: 31.5%;
+  margin-right: 30%;
+  margin-bottom: 15%;
+  border-radius: 20px;
+  background-color: #E3B237;
+  border: 5px solid black;
+}
+
+.extraDesc .botonCerrar {
+  font-size: 2vw;
+  top: 1%;
+  right: 30%;
+  position: fixed;
+  cursor: pointer;
+  font-family: "New Rocker", cursive;
+  font-weight: 700;
+}
+
+.extraDesc .tituloExtras {
+  text-align: center;
+  font-family: "New Rocker", cursive;
+  font-weight: 700;
+  font-size: 2.5vw;
+}
+
+.extraDesc #etiquetaNombreBurger {
+  text-align: center;
+  font-family: "New Rocker", cursive;
+  font-weight: 700;
+  font-size: 1.8vw;
+}
+
+.extraDesc .radioExtrasNombres {
+  text-align: center;
+  font-family: "New Rocker", cursive;
+  font-weight: 700;
+  font-size: 1.5vw;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.extraDesc .botonConfirmarDesc {
+  background-color: black;
+  color: #E3B237;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+  width: 7vw;
+  height: 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 200px;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.extraDesc .botonConfirmarDesc:hover {
+  background-color: white;
+  color: black;
+}
+
+.extraDesc .cambiarDescripcion {
+  position: fixed;
+  right: 30%;
+  top: 31.5%;
+}
+
+.menuD {
+  border: 10px solid #FFB908;
+  height: 30vw;
+  width: 55vw;
+  margin: 0.3vw 1.4vw 3.5vw 0vw;
+  border-radius: 5.8vw;
+}
+
+.menuD:hover {
+  border: 8px solid white;
+}
+
+.menuD img {
+  width: 20vw;
+  padding: 2vw;
+  border-radius: 5.8vw;
+}
+
+.menuD #descripcion {
+  min-height: 18vw;
+  margin: 15px;
+}
+
+#recibe {
+  font-size: 5vw;
+  color: #FFB908;
+  font-family: "New Rocker", cursive;
+  text-align: center;
+}
+
+.containerCarrusel {
+  max-width: 46vw;
+  min-width: 46vw;
+  max-height: 31vw;
+  min-height: 30vw;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.containerCarrusel img {
+  max-width: 46vw;
+  max-height: 30vw;
+}
+
+.containerCarrusel .galeriaBurger {
+  color: #E3B237;
+  font-size: 3vw;
+  font-family: "New Rocker", cursive;
+  margin: 0px;
+}
+
+#parrafoGaleria {
+  color: #E3B237;
+  font-size: 3vw;
+  font-family: "New Rocker", cursive;
+}
+
+.fotoCombo {
+  max-width: 30vw;
+  padding: 10px;
+  background-color: #FFB908;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.fotoCombo:hover {
+  background-color: white;
+}
+
+.contenidoCombo {
+  font-size: 2vw;
+  color: #E3B237;
+  font-family: "New Rocker", cursive;
+}
+
+.personal div {
+  padding: 20px;
+}
+
+.personal p {
+  text-align: center;
+  font-size: 2.5vw;
+  color: #FFB908;
+  font-family: "New Rocker", cursive;
+}
+
+.personal li {
+  text-align: center;
+  font-size: 2vw;
+  color: #FFB908;
+  font-family: "New Rocker", cursive;
+}
+
+.personal img {
+  width: 15vw;
+}
+
+@media all and (max-width: 1024px) {
+  .encabezado {
+    min-height: 28vw;
+  }
+  .encabezado img {
+    width: 20vw;
+  }
+  .encabezado .titulo {
+    font-size: 7vw;
+  }
+  .nav {
+    min-height: 15vw;
+  }
+  .nav .a1 {
+    font-size: 3.5vw;
+  }
+  .nav .a1especial {
+    font-size: 3.5vw;
+  }
+  #main {
+    -ms-grid-rows: (50vw)[3];
+        grid-template-rows: repeat(3, 50vw);
+  }
+  .main1 .mainTitulo {
+    font-size: 5vw;
+  }
+  .main2 .mainTitulo {
+    font-size: 5vw;
+  }
+  .main3 .mainTitulo {
+    font-size: 5vw;
+  }
+  .mapa iframe {
+    min-height: 25vw;
+  }
+  #mapaTitulo p {
+    font-size: 5.5vw;
+    text-align: center;
+  }
+  .redes {
+    min-height: 18vw;
+  }
+  .redes div img {
+    width: 8vw;
+  }
+  .botonPedido {
+    width: 10vw;
+  }
+  .menuI {
+    width: 90%;
+    margin: 2vw 5vw;
+    height: 40vw;
+    border: 6px solid #FFB908;
+  }
+  .menuI #descripcion {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center;
+  }
+  .menuI img {
+    width: 25vw;
+  }
+  .menuD {
+    width: 90%;
+    margin: 2vw 5vw;
+    height: 40vw;
+    border: 6px solid #FFB908;
+  }
+  .menuD #descripcion {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center;
+  }
+  .menuD img {
+    width: 25vw;
+  }
+  #descripcion #productoTitulo {
+    font-size: 3.5vw;
+  }
+  #descripcion ul {
+    font-size: 2vw;
+  }
+  #descripcion #precios {
+    font-size: 2.5vw;
+  }
+  .containerCarrusel {
+    max-width: 70vw;
+    min-width: 70vw;
+    max-height: 45vw;
+    min-height: 44vw;
+  }
+  .containerCarrusel img {
+    max-width: 70vw;
+    max-height: 54vw;
+  }
+  .containerCarrusel .galeriaBurger {
+    font-size: 5vw;
+  }
+  .fotoCombo {
+    max-width: 40vw;
+  }
+  .contenidoCombo {
+    font-size: 4vw;
+  }
+  #parrafoGaleria {
+    font-size: 8vw;
+  }
+  .personal li {
+    font-size: 4vw;
+  }
+  .personal p {
+    font-size: 4.5vw;
+  }
+  .personal img {
+    width: 35vw;
+  }
+  form input {
+    height: 5vw;
+    font-size: 3.1vw;
+    border: 3px solid #FFB908;
+  }
+  form label {
+    font-weight: 550;
+    font-size: 4.1vw;
+  }
+  textarea {
+    width: 37vw;
+    height: 20vw;
+    border: 3px solid #FFB908;
+    font-size: 3vw;
+  }
+  #botones input {
+    margin: 3vw;
+    padding-right: 4vw;
+    padding-left: 4vw;
+    font-size: 3vw;
+  }
+}
+
+@media all and (max-width: 900px) {
+  #main {
+    -ms-grid-rows: (80vw)[3];
+        grid-template-rows: repeat(3, 80vw);
+  }
+  .main1 div img {
+    width: 25vw;
+  }
+  .main2 div img {
+    width: 18vw;
+  }
+  .main3 div img {
+    width: 28vw;
+  }
+  .mainContenido {
+    max-height: 50vw;
+    min-width: 90vw;
+  }
+  #parrafo {
+    font-size: 2.8vw;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .encabezado .titulo {
+    font-size: 9vw;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .encabezado {
+    min-height: 40vw;
+  }
+  .encabezado img {
+    width: 30vw;
+  }
+  .encabezado .titulo {
+    font-size: 10vw;
+  }
+  .nav {
+    min-height: 20vw;
+  }
+  .nav .a1 {
+    font-size: 5.5vw;
+  }
+  .nav .a1especial {
+    font-size: 5.5vw;
+  }
+  #main {
+    -ms-grid-rows: (100vw)[3];
+        grid-template-rows: repeat(3, 100vw);
+  }
+  .main1 .mainTitulo {
+    font-size: 5.5vw;
+  }
+  .main1 div img {
+    width: 30vw;
+  }
+  .main2 .mainTitulo {
+    font-size: 5.5vw;
+  }
+  .main2 div img {
+    width: 22vw;
+  }
+  .main3 .mainTitulo {
+    font-size: 5.5vw;
+  }
+  .main3 div img {
+    width: 38vw;
+  }
+  .mainContenido {
+    max-height: 70vw;
+  }
+  #parrafo {
+    font-size: 3.6vw;
+  }
+  .mapa {
+    padding: 10px;
+    margin-right: 35px;
+  }
+  .mapa iframe {
+    max-width: 35vw;
+  }
+  #mapaTitulo {
+    margin-left: 15px;
+  }
+  #mapaTitulo p {
+    font-size: 6.5vw;
+  }
+  .redes {
+    min-height: 18vw;
+  }
+  .redes div {
+    margin: 5px;
+    border: 3px solid black;
+  }
+  .redes div img {
+    width: 8vw;
+  }
+  .botonPedido {
+    width: 14vw;
+  }
+  .menuI {
+    width: 90%;
+    margin: 2vw 5vw;
+    height: 47vw;
+    border: 6px solid #FFB908;
+  }
+  .menuD {
+    width: 90%;
+    margin: 2vw 5vw;
+    height: 47vw;
+    border: 6px solid #FFB908;
+  }
+  .containerCarrusel {
+    max-width: 90vw;
+    min-width: 90vw;
+    max-height: 65vw;
+    min-height: 64vw;
+  }
+  .containerCarrusel img {
+    max-width: 90vw;
+    max-height: 74vw;
+  }
+  .containerCarrusel .galeriaBurger {
+    font-size: 6vw;
+  }
+  .personal li {
+    font-size: 5vw;
+  }
+  .personal p {
+    font-size: 5.5vw;
+  }
+  .personal img {
+    width: 35vw;
+  }
+  .personal div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  form input {
+    height: 7vw;
+    font-size: 3.5vw;
+    border: 3px solid #FFB908;
+  }
+  form label {
+    font-weight: 550;
+    font-size: 4.6vw;
+  }
+  textarea {
+    width: 40vw;
+    height: 25vw;
+    border: 3px solid #FFB908;
+    font-size: 3.5vw;
+  }
+  #botones input {
+    margin: 3.8vw;
+    padding-right: 4.5vw;
+    padding-left: 4.5vw;
+    font-size: 3.8vw;
+  }
+}
+
+@media all and (max-width: 450px) {
+  #main {
+    -ms-grid-rows: (140vw)[3];
+        grid-template-rows: repeat(3, 140vw);
+  }
+  .main1 div img {
+    width: 40vw;
+  }
+  .main2 div img {
+    width: 24vw;
+  }
+  .main3 div img {
+    width: 48vw;
+  }
+  .mainContenido {
+    max-height: 130vw;
+    min-width: 100vw;
+  }
+  #parrafo {
+    font-size: 5vw;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  #descripcion #productoTitulo {
+    font-size: 4.4vw;
+  }
+  #descripcion ul {
+    font-size: 3vw;
+  }
+  #descripcion #precios {
+    font-size: 3.7vw;
+  }
+  .menuD {
+    height: 60vw;
+  }
+  .menuD img {
+    width: 28vw;
+  }
+  .menuI {
+    height: 60vw;
+  }
+  .menuI img {
+    width: 28vw;
+  }
+  #mapaTitulo {
+    display: none !important;
+  }
+  .mapa {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    height: 45vw;
+  }
+  .mapa iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+@media all and (max-width: 340px) {
+  .nav {
+    min-height: 20vw;
+  }
+  .nav .a1 {
+    font-size: 7.5vw;
+  }
+  .nav .a1especial {
+    font-size: 7.5vw;
+  }
+}
+
+@media all and (max-width: 280px) {
+  #descripcion #productoTitulo {
+    font-size: 5.8vw;
+    padding-bottom: 5px;
+  }
+  #descripcion ul {
+    font-size: 3.8vw;
+  }
+  #descripcion precios {
+    font-size: 4vw;
+  }
+  .menuD {
+    height: 90vw;
+  }
+  .menuD img {
+    width: 28vw;
+  }
+  .menuI {
+    height: 90vw;
+  }
+  .menuI img {
+    width: 28vw;
+  }
+  form input {
+    height: 10vw;
+    font-size: 4.8vw;
+  }
+  form label {
+    font-weight: 550;
+    font-size: 5vw;
+  }
+  textarea {
+    width: 56vw;
+    font-size: 5vw;
+  }
+  #botones input {
+    margin: 3.8vw;
+    padding-right: 4.5vw;
+    padding-left: 4.5vw;
+    font-size: 6vw;
+  }
+}
+
+@media all and (max-width: 250px) {
+  .fixedEspecial {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>VIKINGS MENU</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link href="css/estilos.css" type="text/css" rel="stylesheet"/>
+	<meta charset="UTF-8">
+	<meta name="description" content="Sitio web de un emprendimiento gastronómico del rubro hamburguesas. Zárate, Buenos Aires">
+	<meta name="keywords" content="hamburguesas, burgers, Buenos Aires, Zárate, VIKINGS, comida, rapida, fast food, emprendimiento, gastronómico">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body class="d-flex flex-column" id="body">
+
+	<!--ENCABEZADO-->
+	<header>
+		<div class="d-flex align-items-center flex-row align-content-center encabezado bg-principal">
+			<div id="fotologo"> <a href="index.html"><img src="imagen/logo.png" alt="FOTO LOGO" id="INICIO"></a></div>
+			<div class="flex-grow-1 text-center"><h1 class="titulo">VIKINGS BURGERS</h1></div>
+		</div>
+		<!--BARRA DE MENU-->
+		<div class="nav bg-principal" id="barraMenu">
+			<nav class="navbar navbar-expand-lg navbar-light w-100">
+				<a class="navbar-brand a1 seleccionado" href="menu.html">MENU</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link active a1" href="index.html">INICIO <span class="sr-only">(current)</span></a>
+						<a class="nav-link active a1" href="galeria.html">GALERIA</a>
+						<a class="nav-link active a1" href="personal.html">PERSONAL</a>
+						<a class="nav-link active a1" href="contacto.html">CONTACTO</a>
+						<a class="nav-link active a1especial" href="#redes">REDES</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--CUERPO DEL MENU-->
+	<main>
+		<div class="d-flex flex-column">
+			<div class="d-flex align-items-center justify-self-start align-self-start menuI">
+				<div> <img src="imagen/b1.jpg" alt="RAGNAR"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">RAGNAR BURGER</h2>
+					<ul>
+						<li>-CARNE 300GRS</li>
+						<li>-CEBOLLA</li>
+						<li>-CHEDDAR</li>
+						<li>-BARBACOA</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('RAGNAR','SIMPLE',500)">SIMPLE----$500</li>
+						<li onclick="agregarCarrito('RAGNAR','DOBLE',600)">DOBLE----$600</li>
+						<li onclick="agregarCarrito('RAGNAR','TRIPLE',700)">TRIPLE----$700</li>
+						<li onclick="agregarCarrito('RAGNAR','CUADRUPLE',800)">CUADRUPLE----$800</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-end align-self-end menuD" name="menuDerecha">
+				<div> <img src="imagen/b2.jpg" alt="ODIN"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">ODIN BURGER</h2>
+					<ul>
+						<li>-CARNE 500GRS</li>
+						<li>-PEPINO</li>
+						<li>-CHEDDAR</li>
+						<li>-SALSA PICANTE</li>
+						<li>-AROS DE CEBOLLA</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('ODIN','SIMPLE',550)">SIMPLE----$550</li>
+						<li onclick="agregarCarrito('ODIN','DOBLE',650)">DOBLE----$650</li>
+						<li onclick="agregarCarrito('ODIN','TRIPLE',750)">TRIPLE----$750</li>
+						<li onclick="agregarCarrito('ODIN','CUADRUPLE',850)">CUADRUPLE----$850</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-start align-self-start menuI">
+				<div> <img src="imagen/b3.jpg" alt="OLAF"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">OLAF BURGER</h2>
+					<ul>
+						<li>-CARNE 250GRS</li>
+						<li>-CHEDDAR</li>
+						<li>-BARBACOA</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('OLAF','SIMPLE',450)">SIMPLE----$450</li>
+						<li onclick="agregarCarrito('OLAF','DOBLE',550)">DOBLE----$550</li>
+						<li onclick="agregarCarrito('OLAF','TRIPLE',650)">TRIPLE----$650</li>
+						<li onclick="agregarCarrito('OLAF','CUADRUPLE',750)">CUADRUPLE----$750</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-end align-self-end menuD" name="menuDerecha">
+				<div> <img src="imagen/b4.jpg" alt="THOR"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">THOR BURGER</h2>
+					<ul>
+						<li>-CARNE 500GRS</li>
+						<li>-CEBOLLA CRISPY</li>
+						<li>-CHEDDAR</li>
+						<li>-HUEVO FRITO</li>
+						<li>-TOMATE SECO</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('THOR','SIMPLE',850)">SIMPLE----$850</li>
+						<li onclick="agregarCarrito('THOR','DOBLE',850)">DOBLE----$950</li>
+						<li onclick="agregarCarrito('THOR','TRIPLE',1050)">TRIPLE----$1050</li>
+						<li onclick="agregarCarrito('THOR','CUADRUPLE',1150)">CUADRUPLE----$1150</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-start align-self-start menuI">
+				<div> <img src="imagen/b5.jpg" alt="VALHALLLA"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">VALHALLA BURGER</h2>
+					<ul>
+						<li>-CARNE 250GRS</li>
+						<li>-KETCHUP</li>
+						<li>-BARBACOA</li>
+						<li>-3 AROS DE CEBOLLA</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('VALHALLA','SIMPLE',420)">SIMPLE----$420</li>
+						<li onclick="agregarCarrito('VALHALLA','DOBLE',520)">DOBLE----$520</li>
+						<li onclick="agregarCarrito('VALHALLA','TRIPLE',620)">TRIPLE----$620</li>
+						<li onclick="agregarCarrito('VALHALLA','CUADRUPLE',720)">CUADRUPLE----$720</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-end align-self-end menuD" name="menuDerecha">
+				<div> <img src="imagen/b6.jpg" alt="LAGHERTA"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">LAGHERTA BURGER</h2>
+					<ul>
+						<li>-CARNE 250GRS X2</li>
+						<li>-CEBOLLA CRISPY</li>
+						<li>-TRIPLE CHEDDAR</li>
+						<li>-SALSA FARAÓN</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('LAGHERTA','SIMPLE',750)">SIMPLE----$750</li>
+						<li onclick="agregarCarrito('LAGHERTA','DOBLE',850)">DOBLE----$850</li>
+						<li onclick="agregarCarrito('LAGHERTA','TRIPLE',950)">TRIPLE----$950</li>
+						<li onclick="agregarCarrito('LAGHERTA','CUADRUPLE',1050)">CUADRUPLE----$1050</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-start align-self-start menuI">
+				<div> <img src="imagen/b7.jpg" alt="UBBE"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">UBBE BURGER</h2>
+					<ul>
+						<li>-CARNE 250GRS</li>
+						<li>-CHEDDAR</li>
+						<li>-PEPINO</li>
+						<li>-SALSA FARAÓN</li>
+						<li>-CEBOLLA</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('UBBE','SIMPLE',420)">SIMPLE----$420</li>
+						<li onclick="agregarCarrito('UBBE','DOBLE',520)">DOBLE----$520</li>
+						<li onclick="agregarCarrito('UBBE','TRIPLE',620)">TRIPLE----$620</li>
+						<li onclick="agregarCarrito('UBBE','CUADRUPLE',720)">CUADRUPLE----$720</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-end align-self-end menuD" name="menuDerecha">
+				<div> <img src="imagen/b8.jpg" alt="ASTRID"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">ASTRID BURGER</h2>
+					<ul>
+						<li>-CARNE 200GRS X2</li>
+						<li>-CHEDDAR X2</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('ASTRID','SIMPLE',390)">SIMPLE----$390</li>
+						<li onclick="agregarCarrito('ASTRID','DOBLE',490)">DOBLE----$490</li>
+						<li onclick="agregarCarrito('ASTRID','TRIPLE',590)">TRIPLE----$590</li>
+						<li onclick="agregarCarrito('ASTRID','CUADRUPLE',690)">CUADRUPLE----$690</li>
+					</ul>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-self-start align-self-start menuI">
+				<div> <img src="imagen/b9.jpg" alt="MUZZAS"></div>
+				<div id="descripcion">
+					<h2 id="productoTitulo">MUZZARELITAS</h2>
+					<ul>
+						<li>-QUESO 100 GRS C/U</li>
+						<li>-KETCHUP</li>
+						<li>-BARBACOA</li>
+						<li>-SALSA FARAÓN</li>
+					</ul>
+					<ul id="precios" class="list-unstyled">
+						<li onclick="agregarCarrito('MUZZARELITAS','SIMPLE',380)">SIMPLE----$380</li>
+						<li onclick="agregarCarrito('MUZZARELITAS','MEDIANA',480)">MEDIANA----$480</li>
+						<li onclick="agregarCarrito('MUZZARELITAS','GRANDE',580)">GRANDE----$580</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!--CARRITO-->
+	<div id="botonCarrito" class="position-fixed rounded-lg" onclick="mostrarCarrito()">
+		<a href="#barraMenu"><img src="https://img.icons8.com/material-outlined/50/000000/shopping-cart.png" alt="CARRITO" id="botonAbrir"/></a>
+	</div>
+
+	<div id="carritoDePedidos" class="d-none">
+		<div class="d-flex align-content-center align-items-center">
+			<img src="https://img.icons8.com/ios-filled/50/000000/double-right.png" id="botonVolver" onclick="ocultarCarrito()"/>
+			<p class="flex-grow-1 text-center tituloCarrito">MI PEDIDO</p>
+		</div>
+		<div class="carritoInterno">
+			<p class="col-1">PEDIDO</p>
+			<p class="col-2">EXTRAS</p>
+			<p class="col-3">PRECIO</p>
+			<ul class="fil-1">
+				<li>
+				</li>
+			</ul>
+			<p class="_total">PRECIO FINAL</p>
+			<p class="text-center _fin" id="_fin">---</p>
+		</div>
+		<div class="botonConfirmarPedido" id="botonConfirmarPedido" onclick="confirmarPedido()">
+			PEDIR
+		</div>
+	</div>
+
+	<div class="d-none" id="extraDesc">
+		<p class="tituloExtras">EXTRAS</p>
+		<p id="etiquetaNombreBurger">NOMBRE</p>
+		<p class="botonCerrar" id="botonCerrar" onclick="cerrarExtraDesc()">X</p>
+		<div class="d-inline radioExtras">
+			<label class="radioExtrasNombres"><input type="checkbox" id="cbox1" value="first_checkbox" onclick="verCheckBox(this)"> Extra cheddar $100</label>
+			<label class="radioExtrasNombres"><input type="checkbox" id="cbox2" value="second_checkbox" onclick="verCheckBox(this)"> Extra bacon $100</label>
+			<label class="radioExtrasNombres"><input type="checkbox" id="cbox3" value="third_checkbox" onclick="verCheckBox(this)"> Extra cheddar/bacon $150</label>
+		</div>
+		<br>
+		<p class="tituloExtras">DESCRIPCIÓN EXTRA</p>
+		<img src="https://img.icons8.com/ios-filled/50/000000/double-right.png" class="cambiarDescripcion" onclick=""/>
+		<div class="botonConfirmarDesc" id="botonConfirmarDesc" onclick="confirmarDesc">
+			APLICAR
+		</div>
+	</div>
+
+	<!--PIE DE PAGINA-->
+	<footer>
+		<div class="d-flex justify-content-start align-items-center redes" id="redes">
+			<div><a href="https://www.instagram.com/vikingsburgerss/?hl=es" target="_blank" rel="noopener"><img src="imagen/ig.png" alt="INSTAGRAM"></a></div>
+			<div><a href="https://www.facebook.com/VikingsBurgerss" target="_blank" rel="noopener"><img src="imagen/fb.png" alt="FACEBOOK"></a></div>
+			<div><a href="https://wa.me/1543487542190?text=Hola,%20tengo%20una%20duda" target="_blank" rel="noopener"><img src="imagen/wp.png" alt="WHATSAPP"></a></div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+	<script src="js/simulador.js"></script>
+	<script src="js/html.js"></script>
+	<script src="js/pedidos.js"></script>
+</body>
+</html>

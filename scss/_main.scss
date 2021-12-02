@@ -480,6 +480,64 @@ textarea{
 		top: 31.5%;
 	}
 }
+.ventanaConfirmar{
+	display: none;
+	position: fixed;
+	width: 50%;
+	background-color: rgb(255, 187, 0);
+	height: 500px;
+	top: 15px;
+	right: 25%;
+	left: 25%;
+	border-radius: 15px;
+	border: 5px solid black;
+	.tituloPedido{
+		color: black;
+		font-weight: 700;
+		font-family: $miFuente;
+		text-align: center;
+		padding-top: 5px;
+		font-size: 3vw;
+	}
+	.labelPedido{
+		color: black;
+		font-weight: 700;
+		font-family: $miFuente;
+		font-size: 1.5vw;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 15px;
+	}
+	#datos{
+		text-align: center;
+	}
+	#confirmarDatos{
+		background-color: black;
+		color: #E3B237;
+		font-weight: 500;
+		font-family: $miFuente;
+		font-size: 2vw;
+		width: 30%;
+		text-align: center;
+		margin-right: 35%;
+		margin-left: 35%;
+		margin-top: 30%;
+		cursor: pointer;
+		&:hover{
+			background-color: #E3B237;
+			color: black;
+		}
+	}
+	.botonCerrar{
+		font-size: 2vw;
+		top: 4%;
+		right: 28%;
+		position: fixed;
+		cursor: pointer;
+		font-family: $miFuente;
+		font-weight: 700;
+	}
+}
 //-----------------------------MENU POR DERECHA----------------------------//
 .menuD{
 	border: 10px solid #FFB908;

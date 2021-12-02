@@ -2,9 +2,12 @@ var numeroDeBurger = 0
 var pedidoActual = []
 var numerodePedido=0
 var numBurger=0
-
+var variableDivAbierto="no"
 
 function agregarCarrito(burger,tipo,precio){
+    if(variableDivAbierto=="si"){
+        return
+    }
     mostrarCarrito()
     let div1 = document.createElement("div")
     let div2 = document.createElement("div")
@@ -68,7 +71,6 @@ function mostrarCarrito(){
     let botonCarrito = document.getElementById("botonAbrir")
     botonCarrito.classList.remove("d-inline")
     botonCarrito.classList.add("d-none")
-    
 }
 
 function ocultarCarrito(){
@@ -90,15 +92,14 @@ function ocultarCarrito(){
 }
 
 function extraDescripcion(valor){
-
+    variableDivAbierto="si"
     let pantallaNueva = document.getElementById("extraDesc")
     pantallaNueva.classList.remove("d-none")
     pantallaNueva.classList.add("extraDesc")
     let burger = valor.previousSibling
     let nombreBurger = burger.lastElementChild
 
-    let botonPedir=document.getElementById("botonConfirmarPedido")
-    botonConfirmarPedido.onclick=function none(){}
+    botonConfirmarPedido.onclick=function none2(){}
     let etiquetaNombre = document.getElementById("etiquetaNombreBurger")
     etiquetaNombre.innerHTML=nombreBurger.innerHTML
 }
@@ -112,6 +113,7 @@ function cerrarExtraDesc(){
     botonConfirmarPedido.onclick=function _confirm(){
         confirmarPedido()
     }
+    variableDivAbierto="no"
 }
 
 function _cancelarBurger(valor){
@@ -150,10 +152,13 @@ function confirmarPedido(){
     if(pedidoActual==""){
         return
     }else{
+
+        // let pedido = new Pedido("timoteo","alberti","efectivo",pedidoActual)
+
         let localStoragePedido = localStorage.length
         numerodePedido=parseInt(localStoragePedido)
         let nombreDelPedido="Pedido"+numerodePedido
-        localStorage.setItem(nombreDelPedido,JSON.stringify(pedidoActual))
+        localStorage.setItem(nombreDelPedido,JSON.stringify(pedido))
     
         numerodePedido=numerodePedido+1
         pedidoActual=[]
@@ -165,6 +170,11 @@ function confirmarPedido(){
         document.getElementById("_fin").innerHTML="---"
     }
     numBurger=0
+    variableDivAbierto="no"
 }
 
+function datos(){
+    variableDivAbierto="si"
+    document.getElementById("pedidoConfirmar").style.display="inline"
+}
 

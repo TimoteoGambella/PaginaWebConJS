@@ -621,6 +621,71 @@ textarea {
   top: 31.5%;
 }
 
+.ventanaConfirmar {
+  display: none;
+  position: fixed;
+  width: 50%;
+  background-color: #ffbb00;
+  height: 500px;
+  top: 15px;
+  right: 25%;
+  left: 25%;
+  border-radius: 15px;
+  border: 5px solid black;
+}
+
+.ventanaConfirmar .tituloPedido {
+  color: black;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 3vw;
+}
+
+.ventanaConfirmar .labelPedido {
+  color: black;
+  font-weight: 700;
+  font-family: "New Rocker", cursive;
+  font-size: 1.5vw;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.ventanaConfirmar #datos {
+  text-align: center;
+}
+
+.ventanaConfirmar #confirmarDatos {
+  background-color: black;
+  color: #E3B237;
+  font-weight: 500;
+  font-family: "New Rocker", cursive;
+  font-size: 2vw;
+  width: 30%;
+  text-align: center;
+  margin-right: 35%;
+  margin-left: 35%;
+  margin-top: 30%;
+  cursor: pointer;
+}
+
+.ventanaConfirmar #confirmarDatos:hover {
+  background-color: #E3B237;
+  color: black;
+}
+
+.ventanaConfirmar .botonCerrar {
+  font-size: 2vw;
+  top: 4%;
+  right: 28%;
+  position: fixed;
+  cursor: pointer;
+  font-family: "New Rocker", cursive;
+  font-weight: 700;
+}
+
 .menuD {
   border: 10px solid #FFB908;
   height: 30vw;

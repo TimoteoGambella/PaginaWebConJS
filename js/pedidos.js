@@ -8,3 +8,12 @@ class Burgers{
         this.descripcion=descripcion
     }
 }
+
+class Pedido{
+    constructor(cliente,direccion,pago,pedido){
+    this.cliente=cliente
+    this.direccion=direccion
+    this.pago=pago
+    this.pedido=pedido
+    }
+}

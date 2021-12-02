@@ -225,7 +225,7 @@
 			<p class="_total">PRECIO FINAL</p>
 			<p class="text-center _fin" id="_fin">---</p>
 		</div>
-		<div class="botonConfirmarPedido" id="botonConfirmarPedido" onclick="confirmarPedido()">
+		<div class="botonConfirmarPedido" id="botonConfirmarPedido" onclick="datos()">
 			PEDIR
 		</div>
 	</div>
@@ -247,6 +247,23 @@
 		</div>
 	</div>
 
+	<div class="ventanaConfirmar" id="pedidoConfirmar">
+		<p class="tituloPedido">PEDIDO</p>
+		<p class="botonCerrar" id="botonCerrar">X</p>
+		<div id="datos">
+			<label for="nombre" class="labelPedido">NOMBRE:</label><input type="text" name="nombre" required="true" placeholder="Ingrese su nombre">
+			<br>
+			<label for="direccion" class="labelPedido">DIRECCIÓN:</label><input type="text" required="true" name="direccion" placeholder="Ingrese su dirección">
+			<br>
+			<label for="efectivo" class="labelPedido">EFECTIVO</label><input type="radio" name="pago" id="efectivo" checked>
+			<label for="transferencia" class="labelPedido">TRANSFERENCIA</label><input type="radio" name="pago" id="transferencia">
+			<label for="mp" class="labelPedido">MERCADOPAGO</label><input type="radio" name="pago" id="mp">
+			<p>El pedido demora 45 minutos</p>
+		</div>
+		<div id="confirmarDatos">
+			CONFIRMAR
+		</div>
+	</div>
 	<!--PIE DE PAGINA-->
 	<footer>
 		<div class="d-flex justify-content-start align-items-center redes" id="redes">

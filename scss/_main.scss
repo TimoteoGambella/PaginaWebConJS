@@ -418,7 +418,7 @@ textarea{
 .extraDesc{
 	display: inline;
 	position: fixed;
-	min-height: 70%;
+	min-height: 50%;
 	min-width: 40%;
 	margin-left: 31.5%;
 	margin-right: 30%;
@@ -465,7 +465,7 @@ textarea{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 200px;
+		margin-left: 180px;
 		border-radius: 5px;
 		margin-top: 30px;
 		cursor: pointer;
@@ -473,11 +473,6 @@ textarea{
 			background-color: white;
 			color: black;
 		}
-	}
-	.cambiarDescripcion{
-		position: fixed;
-		right: 30%;
-		top: 31.5%;
 	}
 }
 .ventanaConfirmar{

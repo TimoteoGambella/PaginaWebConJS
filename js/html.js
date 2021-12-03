@@ -177,3 +177,7 @@ function datos(){
     document.getElementById("pedidoConfirmar").style.display="inline"
 }
 
+function cerrarDatos(){
+    variableDivAbierto="no"
+    document.getElementById("pedidoConfirmar").style.display="none"
+}

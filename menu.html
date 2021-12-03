@@ -216,7 +216,7 @@
 		</div>
 		<div class="carritoInterno">
 			<p class="col-1">PEDIDO</p>
-			<p class="col-2">EXTRAS</p>
+			<p class="col-2">EXTRAS/<br>ACLARAR</p>
 			<p class="col-3">PRECIO</p>
 			<ul class="fil-1">
 				<li>
@@ -240,6 +240,10 @@
 			<label class="radioExtrasNombres"><input type="checkbox" id="cbox3" value="third_checkbox" onclick="verCheckBox(this)"> Extra cheddar/bacon $150</label>
 		</div>
 		<br>
+		<div>
+			<p class="tituloExtras">ACLARACIÓN</p>
+			<textarea type="text" name="comentario" id="comentario" placeholder="Ingrese un comentario" class="aclaraciones"></textarea>
+		</div>
 		<div class="botonConfirmarDesc" id="botonConfirmarDesc" onclick="confirmarDesc">
 			APLICAR
 		</div>
@@ -249,16 +253,16 @@
 		<p class="tituloPedido">PEDIDO</p>
 		<p class="botonCerrar" id="botonCerrar" onclick="cerrarDatos()">X</p>
 		<div id="datos">
-			<label for="nombre" class="labelPedido">NOMBRE:</label><input type="text" name="nombre" required="true" placeholder="Ingrese su nombre">
+			<label for="nombre" class="labelPedido">NOMBRE:</label><input type="text" id="datoNombre" name="nombre" required="true" placeholder="Ingrese su nombre">
 			<br>
-			<label for="direccion" class="labelPedido">DIRECCIÓN:</label><input type="text" required="true" name="direccion" placeholder="Ingrese su dirección">
-			<br>
+			<label for="direccion" class="labelPedido">DIRECCIÓN:</label><input type="text" id="datoDireccion" required="true" name="direccion" placeholder="Ingrese su dirección">
+			<p class="labelPedido" id="datoPrecio"></p>
 			<label for="efectivo" class="labelPedido">EFECTIVO</label><input type="radio" name="pago" id="efectivo" checked>
 			<label for="transferencia" class="labelPedido">TRANSFERENCIA</label><input type="radio" name="pago" id="transferencia">
 			<label for="mp" class="labelPedido">MERCADOPAGO</label><input type="radio" name="pago" id="mp">
 			<p>El pedido demora 45 minutos</p>
 		</div>
-		<div id="confirmarDatos">
+		<div id="confirmarDatos" onclick="confirmarDatos()">
 			CONFIRMAR
 		</div>
 	</div>

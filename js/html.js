@@ -147,12 +147,11 @@ function verCheckBox(valor){
     }
 }
 
-function confirmarPedido(){
+function confirmarPedido(nombre,direccion,pago){
     if(pedidoActual==""){
         return
     }else{
-
-        // let pedido = new Pedido("timoteo","alberti","efectivo",pedidoActual)
+        let pedido = new Pedido(nombre.value,direccion.value,pago,pedidoActual)
 
         let localStoragePedido = localStorage.length
         numerodePedido=parseInt(localStoragePedido)
@@ -168,6 +167,10 @@ function confirmarPedido(){
         }
         document.getElementById("_fin").innerHTML="---"
     }
+    document.getElementById("datoNombre").value=""
+    document.getElementById("datoDireccion").value=""
+    document.getElementById("efectivo").checked=true
+    document.getElementById("pedidoConfirmar").style.display="none"
     numBurger=0
     variableDivAbierto="no"
 }
@@ -175,9 +178,32 @@ function confirmarPedido(){
 function datos(){
     variableDivAbierto="si"
     document.getElementById("pedidoConfirmar").style.display="inline"
+    document.getElementById("datoPrecio").innerHTML="TOTAL: "+(document.getElementById("_fin")).innerHTML
 }
 
 function cerrarDatos(){
     variableDivAbierto="no"
     document.getElementById("pedidoConfirmar").style.display="none"
+}
+
+function confirmarDatos(){
+    let nombre = document.getElementById("datoNombre")
+    let direccion = document.getElementById("datoDireccion")
+    if(nombre.value==""){
+        alert("Debe ingresar su nombre")
+    }else if(direccion.value==""){
+        alert("Debe ingresar su direccion")
+    }else{
+        let formaDePago = document.getElementById("efectivo").checked
+        let pago = "EFECTIVO"
+        if (!formaDePago){
+            formaDePago=document.getElementById("transferencia").checked
+            pago="TRANSFERENCIA"
+            if(!formaDePago){
+                formaDePago=document.getElementById("mp").checked
+                pago="MERCADOPAGO"
+            }
+        }
+        confirmarPedido(nombre,direccion,pago)   
+    }
 }

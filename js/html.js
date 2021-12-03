@@ -109,9 +109,8 @@ function cerrarExtraDesc(){
     pantallaNueva.classList.remove("extraDesc")
     pantallaNueva.classList.add("d-none")
 
-    let botonPedir=document.getElementById("botonConfirmarPedido")
     botonConfirmarPedido.onclick=function _confirm(){
-        confirmarPedido()
+        datos()
     }
     variableDivAbierto="no"
 }

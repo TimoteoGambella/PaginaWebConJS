@@ -204,6 +204,7 @@ function confirmarDatos(){
                 pago="MERCADOPAGO"
             }
         }
-        confirmarPedido(nombre,direccion,pago)   
+        confirmarPedido(nombre,direccion,pago)
+        alert("Su pedido fue realizado")
     }
 }

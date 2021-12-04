@@ -3,6 +3,7 @@ var pedidoActual = []
 var numerodePedido=0
 var numBurger=0
 var variableDivAbierto="no"
+var burgerParaExtra = ""
 
 function agregarCarrito(burger,tipo,precio){
     if(variableDivAbierto=="si"){
@@ -102,6 +103,7 @@ function extraDescripcion(valor){
     botonConfirmarPedido.onclick=function none2(){}
     let etiquetaNombre = document.getElementById("etiquetaNombreBurger")
     etiquetaNombre.innerHTML=nombreBurger.innerHTML
+    burgerParaExtra=valor
 }
 
 function cerrarExtraDesc(){
@@ -113,6 +115,13 @@ function cerrarExtraDesc(){
         datos()
     }
     variableDivAbierto="no"
+    burgerParaExtra=""
+}
+
+function confirmarExtras(){
+    let padre = burgerParaExtra.parentNode
+    console.log(padre)
+    
 }
 
 function _cancelarBurger(valor){

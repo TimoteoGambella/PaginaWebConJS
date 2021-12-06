@@ -120,8 +120,50 @@ function cerrarExtraDesc(){
 
 function confirmarExtras(){
     let padre = burgerParaExtra.parentNode
-    console.log(padre)
-    
+    let id = padre.id
+    let precio = padre.lastElementChild.innerHTML
+
+    let numeroAEliminar=0
+    for(producto of pedidoActual){
+        let variableNumero = producto.numBurger
+        if(id==variableNumero){
+            if (document.getElementById("cbox1").checked){
+                if(pedidoActual[id].extras=="Ext. cheddar"){
+                    alert("Ya añadio extra cheddar")
+                }else{padre.lastElementChild.innerHTML=parseInt(precio)+100
+                    pedidoActual[id].extras="Ext. cheddar"}
+            }else if(document.getElementById("cbox2").checked){
+                if(pedidoActual[id].extras=="Ext. bacon"){
+                    alert("Ya añadio extra bacon")
+                }else{padre.lastElementChild.innerHTML=parseInt(precio)+100
+                    pedidoActual[id].extras="Ext. bacon"}
+            }else if(document.getElementById("cbox3").checked){
+                if(pedidoActual[id].extras=="Ext. chd/bac"){
+                    alert("Ya añadio extra chd/bac")
+                }else{padre.lastElementChild.innerHTML=parseInt(precio)+100
+                    pedidoActual[id].extras="Ext. chd/bac"}
+            }
+            if(document.getElementById("comentario")!=""){
+                pedidoActual[id].descripcion=document.getElementById("comentario").value
+            }
+        }
+        numeroAEliminar=numeroAEliminar+1
+    }
+
+    document.getElementById("cbox1").checked=false
+    document.getElementById("cbox2").checked=false
+    document.getElementById("cbox3").checked=false
+
+    document.getElementById("comentario").value=""
+
+    let pantallaNueva = document.getElementById("extraDesc")
+    pantallaNueva.classList.remove("extraDesc")
+    pantallaNueva.classList.add("d-none")
+
+    botonConfirmarPedido.onclick=function _confirm(){
+        datos()
+    }
+    variableDivAbierto="no"
 }
 
 function _cancelarBurger(valor){

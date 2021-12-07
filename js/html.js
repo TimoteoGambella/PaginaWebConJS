@@ -122,7 +122,7 @@ function confirmarExtras(){
     let padre = burgerParaExtra.parentNode;
     let id = padre.id;
     let precio = padre.lastElementChild.innerHTML;
-
+    
     let numeroAEliminar=0
     for(producto of pedidoActual){
         let variableNumero = producto.numBurger;
@@ -130,23 +130,46 @@ function confirmarExtras(){
             if (document.getElementById("cbox1").checked){
                 if(pedidoActual[id].extras=="Ext. cheddar"){
                     alert("Ya añadio extra cheddar");
+                }else if(pedidoActual[id].extras=="Ext. bacon"){
+                    pedidoActual[id].extras="Ext. cheddar";
+                }else if(pedidoActual[id].extras=="Ext. chd/bac"){
+                    pedidoActual[id].extras="Ext. cheddar";
+                    padre.lastElementChild.innerHTML=parseInt(precio)-50;
+                    pedidoActual[id].precio-=50
                 }else{
                     padre.lastElementChild.innerHTML=parseInt(precio)+100;
                     pedidoActual[id].extras="Ext. cheddar";
+                    pedidoActual[id].precio+=100
                 }
             }else if(document.getElementById("cbox2").checked){
                 if(pedidoActual[id].extras=="Ext. bacon"){
                     alert("Ya añadio extra bacon");
+                }else if(pedidoActual[id].extras=="Ext. cheddar"){
+                    pedidoActual[id].extras="Ext. bacon";
+                }else if(pedidoActual[id].extras=="Ext. chd/bac"){
+                    pedidoActual[id].extras="Ext. bacon";
+                    padre.lastElementChild.innerHTML=parseInt(precio)-50;
+                    pedidoActual[id].precio-=50
                 }else{
                     padre.lastElementChild.innerHTML=parseInt(precio)+100;
                     pedidoActual[id].extras="Ext. bacon";
+                    pedidoActual[id].precio+=100
                 }
             }else if(document.getElementById("cbox3").checked){
                 if(pedidoActual[id].extras=="Ext. chd/bac"){
                     alert("Ya añadio extra chd/bac");
-                }else{
-                    padre.lastElementChild.innerHTML=parseInt(precio)+100;
+                }else if(pedidoActual[id].extras=="Ext. cheddar"){
                     pedidoActual[id].extras="Ext. chd/bac";
+                    padre.lastElementChild.innerHTML=parseInt(precio)+50;
+                    pedidoActual[id].precio+=50
+                }else if(pedidoActual[id].extras=="Ext. bacon"){
+                    pedidoActual[id].extras="Ext. chd/bac";
+                    padre.lastElementChild.innerHTML=parseInt(precio)+50;
+                    pedidoActual[id].precio+=50
+                }else{
+                    padre.lastElementChild.innerHTML=parseInt(precio)+150;
+                    pedidoActual[id].extras="Ext. chd/bac";
+                    pedidoActual[id].precio+=150
                 }
             }
             if(document.getElementById("comentario")!=""){
@@ -155,7 +178,13 @@ function confirmarExtras(){
         }
         numeroAEliminar=numeroAEliminar+1;
     }
+    if(document.getElementById("cbox1").checked!=false || document.getElementById("cbox2").checked!=false || document.getElementById("cbox3").checked!=false || document.getElementById("comentario").value!=""){
+        if(((padre.lastElementChild).previousSibling.innerHTML)[1]!="*"){
+            (padre.lastElementChild).previousSibling.innerHTML=(padre.lastElementChild).previousSibling.innerHTML+"*";
+        }
+    }
 
+    
     document.getElementById("cbox1").checked=false;
     document.getElementById("cbox2").checked=false;
     document.getElementById("cbox3").checked=false;

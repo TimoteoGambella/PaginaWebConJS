@@ -4,7 +4,7 @@ var numerodePedido=0;
 var numBurger=0;
 var variableDivAbierto="no";
 var burgerParaExtra = "";
-var  variableBorrado = 0
+var  variableBorrado = 0;
 
 
 function agregarCarrito(burger,tipo,precio){
@@ -125,13 +125,13 @@ function confirmarExtras(){
     let id = padre.id;
     let precio = padre.lastElementChild.innerHTML;
     
-    let numeroAEliminar=0
+    let numeroAEliminar=0;
     for(producto of pedidoActual){
         let variableNumero = producto.numBurger;
 
         if(id==variableNumero){
             if (variableBorrado!=0){
-                id=id-variableBorrado
+                id=id-variableBorrado;
             }
             if(document.getElementById("cbox1").checked){
                 if(pedidoActual[id].extras=="Ext. cheddar"){
@@ -141,13 +141,13 @@ function confirmarExtras(){
                 }else if(pedidoActual[id].extras=="Ext. chd/bac"){
                     pedidoActual[id].extras="Ext. cheddar";
                     padre.lastElementChild.innerHTML=parseInt(precio)-50;
-                    pedidoActual[id].precio-=50
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) - 50
+                    pedidoActual[id].precio-=50;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) - 50;
                 }else{
                     padre.lastElementChild.innerHTML=parseInt(precio)+100;
                     pedidoActual[id].extras="Ext. cheddar";
-                    pedidoActual[id].precio+=100
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 100
+                    pedidoActual[id].precio+=100;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 100;
                 }
             }else if(document.getElementById("cbox2").checked){
                 if(pedidoActual[id].extras=="Ext. bacon"){
@@ -157,13 +157,13 @@ function confirmarExtras(){
                 }else if(pedidoActual[id].extras=="Ext. chd/bac"){
                     pedidoActual[id].extras="Ext. bacon";
                     padre.lastElementChild.innerHTML=parseInt(precio)-50;
-                    pedidoActual[id].precio-=50
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) - 50
+                    pedidoActual[id].precio-=50;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) - 50;
                 }else{
                     padre.lastElementChild.innerHTML=parseInt(precio)+100;
                     pedidoActual[id].extras="Ext. bacon";
-                    pedidoActual[id].precio+=100
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 100
+                    pedidoActual[id].precio+=100;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 100;
                 }
             }else if(document.getElementById("cbox3").checked){
                 if(pedidoActual[id].extras=="Ext. chd/bac"){
@@ -171,18 +171,18 @@ function confirmarExtras(){
                 }else if(pedidoActual[id].extras=="Ext. cheddar"){
                     pedidoActual[id].extras="Ext. chd/bac";
                     padre.lastElementChild.innerHTML=parseInt(precio)+50;
-                    pedidoActual[id].precio+=50
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 50
+                    pedidoActual[id].precio+=50;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 50;
                 }else if(pedidoActual[id].extras=="Ext. bacon"){
                     pedidoActual[id].extras="Ext. chd/bac";
                     padre.lastElementChild.innerHTML=parseInt(precio)+50;
-                    pedidoActual[id].precio+=50
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 50
+                    pedidoActual[id].precio+=50;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 50;
                 }else{
                     padre.lastElementChild.innerHTML=parseInt(precio)+150;
                     pedidoActual[id].extras="Ext. chd/bac";
-                    pedidoActual[id].precio+=150
-                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 150
+                    pedidoActual[id].precio+=150;
+                    document.getElementById("_fin").innerHTML=parseInt(document.getElementById("_fin").innerHTML) + 150;
                 }
             }
             if(document.getElementById("comentario")!=""){
@@ -232,7 +232,7 @@ function _cancelarBurger(valor){
         }
         numeroAEliminar=numeroAEliminar+1;
     }
-    variableBorrado+=1
+    variableBorrado+=1;
     padre2.remove();
 }
 
@@ -282,7 +282,7 @@ function datos(){
         document.getElementById("datoPrecio").innerHTML="TOTAL: "+(document.getElementById("_fin")).innerHTML;
         variableDivAbierto="si";
     }else{
-        alert("No agrego productos a su pedido")
+        alert("No agrego productos a su pedido");
     }
 }
 

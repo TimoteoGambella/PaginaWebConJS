@@ -1,3 +1,4 @@
+// Variables a usar dentro del codigo
 var numeroDeBurger = 0;
 var pedidoActual = [];
 var numerodePedido=0;
@@ -6,12 +7,17 @@ var variableDivAbierto="no";
 var burgerParaExtra = "";
 var  variableBorrado = 0;
 
-
+// Funcion para agregar productos al pedido
 function agregarCarrito(burger,tipo,precio){
+
+    // Chequeo si la variable marca si o no
     if(variableDivAbierto=="si"){
         return;
     }
+    // Mostrar el div del carrito
     mostrarCarrito();
+
+    // Creo elementos y le añado sus estilos y funciones
     let div1 = document.createElement("div");
     let div2 = document.createElement("div");
     let p1 = document.createElement("p");
@@ -23,7 +29,7 @@ function agregarCarrito(burger,tipo,precio){
     p2.textContent=precio;
     pExtra.textContent="+";
     pX.textContent="X";
-    
+
     p1.className="nombreBurger";
     p1.id="nombreBurger";
     div2.className="nombreTipoBurger";
@@ -40,13 +46,14 @@ function agregarCarrito(burger,tipo,precio){
     div1.id=numBurger;
     numeroDeBurger=numeroDeBurger+1;
 
+    // Armo la relacion entre los elementos
     div2.appendChild(pX);
     div2.appendChild(p1);
     div1.appendChild(div2);
     div1.appendChild(pExtra);
     div1.appendChild(p2);
     document.querySelector(".fil-1 li").appendChild(div1);
-    
+    // Cambio el valor total
     let precioFinal = document.getElementById("_fin");
     if (precioFinal.innerHTML === "---"){
         precioFinal = precio;
@@ -55,14 +62,17 @@ function agregarCarrito(burger,tipo,precio){
         document.getElementById("_fin").innerHTML = parseInt(precioFinal.innerHTML) + precio;
         
     }
+    //Creo la clase con los datos del producto y lo pusheo al pedidoActual 
     pedidoActual.push(new Burgers(burger+" "+tipo,precio,"-","-"));
     numBurger=numBurger+1;
 }
 
+// Funcion para mostrar el div del carrito
 function mostrarCarrito(){
     let divCarrito = document.getElementById("carritoDePedidos");
     divCarrito.classList.add("d-inline");
     let menuDerecha = document.getElementsByName('menuDerecha');
+    // Reorganizo la pagina
     for(let i = 0; i < menuDerecha.length; i++){
         menuDerecha[i].classList.remove("justify-self-end");
         menuDerecha[i].classList.remove("align-self-end");
@@ -71,16 +81,19 @@ function mostrarCarrito(){
         menuDerecha[i].classList.remove("menuD");
         menuDerecha[i].classList.add("menuI");
     }
+    // Saco el boton del carrito
     let botonCarrito = document.getElementById("botonAbrir");
     botonCarrito.classList.remove("d-inline");
     botonCarrito.classList.add("d-none");
 }
 
+// Funcion para cerrar el carrito
 function ocultarCarrito(){
     let divCarrito = document.getElementById("carritoDePedidos");
     divCarrito.classList.remove("d-inline");
     divCarrito.classList.add("d-none");
     let menuDerecha = document.getElementsByName('menuDerecha');
+    // Reorganizo la pagina
     for(let i = 0; i < menuDerecha.length; i++){
         menuDerecha[i].classList.remove("justify-self-start");
         menuDerecha[i].classList.remove("align-self-start");
@@ -89,16 +102,20 @@ function ocultarCarrito(){
         menuDerecha[i].classList.remove("menuI");
         menuDerecha[i].classList.add("menuD");
     }
+    // Muestro el boton del carrito
     let botonCarrito = document.getElementById("botonAbrir");
     botonCarrito.classList.remove("d-none");
     botonCarrito.classList.add("d-inline");
 }
 
+// Funcion para agregar Extras o Aclaraciones
 function extraDescripcion(valor){
+    // Cambio el valor de la variable y muestro el div de extras
     variableDivAbierto="si";
     let pantallaNueva = document.getElementById("extraDesc");
     pantallaNueva.classList.remove("d-none");
     pantallaNueva.classList.add("extraDesc");
+    // Busco los valores del producto para insertarlos en el nuevo div y le saco la funcion al boton de confirmar el pedido
     let burger = valor.previousSibling;
     let nombreBurger = burger.lastElementChild;
 
@@ -108,27 +125,35 @@ function extraDescripcion(valor){
     burgerParaExtra=valor;
 }
 
+// Funcion para cerrar el div de Extras y Aclaraciones
 function cerrarExtraDesc(){
     let pantallaNueva = document.getElementById("extraDesc");
     pantallaNueva.classList.remove("extraDesc");
     pantallaNueva.classList.add("d-none");
 
+    // Agrego la funcion al boton de confirmar pedido
     botonConfirmarPedido.onclick=function _confirm(){
         datos();
     }
+    // Cambio la variable
     variableDivAbierto="no";
     burgerParaExtra="";
 }
 
+// Boton para confirmar los extras y las aclaraciones
 function confirmarExtras(){
+    // Busco valores para obtener el producto
     let padre = burgerParaExtra.parentNode;
     let id = padre.id;
     let precio = padre.lastElementChild.innerHTML;
     
     let numeroAEliminar=0;
+
+    // Recorro un for of para pasar por los productos, cuando coincida con el indicado, entra en el if
     for(producto of pedidoActual){
         let variableNumero = producto.numBurger;
 
+        // Lee todas las opciones de checkboxs y textbox para agregar o cambiar extras y aclaraciones
         if(id==variableNumero){
             if (variableBorrado!=0){
                 id=id-variableBorrado;
@@ -191,39 +216,47 @@ function confirmarExtras(){
         }
         numeroAEliminar=numeroAEliminar+1;
     }
+    // Si se agrega algun extra o aclaracion se muestra un * para indicar que productos tienen los mismos
     if(document.getElementById("cbox1").checked!=false || document.getElementById("cbox2").checked!=false || document.getElementById("cbox3").checked!=false || document.getElementById("comentario").value!=""){
         if(((padre.lastElementChild).previousSibling.innerHTML)[1]!="*"){
             (padre.lastElementChild).previousSibling.innerHTML=(padre.lastElementChild).previousSibling.innerHTML+"*";
         }
     }
 
-    
+    // Limpio el div de extras y aclaraciones
     document.getElementById("cbox1").checked=false;
     document.getElementById("cbox2").checked=false;
     document.getElementById("cbox3").checked=false;
 
     document.getElementById("comentario").value="";
 
+    // Cierro el div de extras y aclaraciones
     let pantallaNueva = document.getElementById("extraDesc");
     pantallaNueva.classList.remove("extraDesc");
     pantallaNueva.classList.add("d-none");
 
+    // Le doy la funcion al boton de confirmar pedido
     botonConfirmarPedido.onclick=function _confirm(){
         datos();
     }
+    // Cambio la variable
     variableDivAbierto="no";
 }
 
+// Funcion para cancelar un producto
 function _cancelarBurger(valor){
+    // Busco los valores del producto a borrar
     let padre = valor.parentNode;
     let padre2=padre.parentNode;
 
+    // Disminuyo el costo del producto en el precio total
     let precio=padre2.lastElementChild;
     let precioFinal = document.getElementById("_fin");
     document.getElementById("_fin").innerHTML = parseInt(precioFinal.innerHTML) - parseInt(precio.innerHTML) ;
 
     let claseNumeroDeBurger = padre2.id;
 
+    // Recorro con un for of y elimino el producto del array pedidoActual (Se hace con un splice)
     let numeroAEliminar=0;
     for(producto of pedidoActual){
         let variableNumero = producto.numBurger;
@@ -236,6 +269,7 @@ function _cancelarBurger(valor){
     padre2.remove();
 }
 
+// Funcion para los extras. Si se chequea el extra bacon y cheddar se cancelan los individuales
 function verCheckBox(valor){
     if(valor.value=="third_checkbox"){
         if(document.getElementById("cbox1").checked || document.getElementById("cbox2").checked){
@@ -247,34 +281,43 @@ function verCheckBox(valor){
     }
 }
 
+// Funcion para confirmar el pedido y los datos
 function confirmarPedido(nombre,direccion,pago){
+    // Chequeo que haya objetos en el array
     if(pedidoActual==""){
         return;
     }else{
+        // Genero el objeto de la clase pedido
         let pedido = new Pedido(nombre.value,direccion.value,pago,pedidoActual);
 
+        // Busco en el localStorage el ultimo numero de pedido y genero uno nuevo pasandole el stringify del array
         let localStoragePedido = localStorage.length;
         numerodePedido=parseInt(localStoragePedido);
         let nombreDelPedido="Pedido"+numerodePedido;
         localStorage.setItem(nombreDelPedido,JSON.stringify(pedido));
     
+        // Limpio el array
         numerodePedido=numerodePedido+1;
         pedidoActual=[];
-    
+        
+        // Limpio el div del carrito
         let liPedidos = document.querySelector(".fil-1 li");
         while(liPedidos.firstChild){
             liPedidos.removeChild(liPedidos.firstChild);
         }
         document.getElementById("_fin").innerHTML="---";
     }
+    // Limpio el div de los datos
     document.getElementById("datoNombre").value="";
     document.getElementById("datoDireccion").value="";
     document.getElementById("efectivo").checked=true;
     document.getElementById("pedidoConfirmar").style.display="none";
     numBurger=0;
+    // Cambio la variable
     variableDivAbierto="no";
 }
 
+// Funcion para ingresar al div de datos
 function datos(){
     
     if(pedidoActual!=""){
@@ -286,12 +329,15 @@ function datos(){
     }
 }
 
+// Funcion para cerrar el div de los datos
 function cerrarDatos(){
     variableDivAbierto="no";
     document.getElementById("pedidoConfirmar").style.display="none";
 }
 
+// Funcion para confirmar los datos cargados
 function confirmarDatos(){
+    // Tomo los valores necesarios y chequeo si estan completos
     let nombre = document.getElementById("datoNombre");
     let direccion = document.getElementById("datoDireccion");
     if(nombre.value==""){
@@ -309,6 +355,7 @@ function confirmarDatos(){
                 pago="MERCADOPAGO";
             }
         }
+        // LLamo a la funcion confirmarPedido
         confirmarPedido(nombre,direccion,pago);
         alert("Su pedido fue realizado");
     }

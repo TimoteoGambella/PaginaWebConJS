@@ -110,6 +110,7 @@ function ocultarCarrito(){
 
 // Funcion para agregar Extras o Aclaraciones
 function extraDescripcion(valor){
+
     // Cambio el valor de la variable y muestro el div de extras
     variableDivAbierto="si";
     let pantallaNueva = document.getElementById("extraDesc");
@@ -118,6 +119,30 @@ function extraDescripcion(valor){
     // Busco los valores del producto para insertarlos en el nuevo div y le saco la funcion al boton de confirmar el pedido
     let burger = valor.previousSibling;
     let nombreBurger = burger.lastElementChild;
+
+    // Si tiene extras o aclaraciones ya cargadas, las agrego al div
+    let array = burger.parentNode
+    idBurger = array.id
+
+    for(producto of pedidoActual){
+        let variableNumero = producto.numBurger;
+
+        if(idBurger==variableNumero){
+            if (variableBorrado!=0){
+                idBurger=idBurger-variableBorrado;
+            }
+            if(pedidoActual[idBurger].descripcion!="-"){
+                document.getElementById("comentario").value=pedidoActual[idBurger].descripcion
+            }
+            if(pedidoActual[idBurger].extras=="Ext. cheddar"){
+                document.getElementById("cbox1").checked=true
+            }else if(pedidoActual[idBurger].extras=="Ext. bacon"){
+                document.getElementById("cbox2").checked=true
+            }else if(pedidoActual[idBurger].extras=="Ext. chd/bac"){
+                document.getElementById("cbox3").checked=true
+            }
+        }
+    }
 
     botonConfirmarPedido.onclick=function none2(){}
     let etiquetaNombre = document.getElementById("etiquetaNombreBurger");

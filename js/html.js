@@ -122,23 +122,25 @@ function extraDescripcion(valor){
 
     // Si tiene extras o aclaraciones ya cargadas, las agrego al div
     let array = burger.parentNode
-    idBurger = array.id
+    idDeBurger = array.id
 
     for(producto of pedidoActual){
         let variableNumero = producto.numBurger;
 
-        if(idBurger==variableNumero){
-            if (variableBorrado!=0){
-                idBurger=idBurger-variableBorrado;
+        if(idDeBurger==variableNumero){
+            if(pedidoActual.length!=1){
+                if (variableBorrado!=0){
+                    idDeBurger=idDeBurger-variableBorrado;
+                }
             }
-            if(pedidoActual[idBurger].descripcion!="-"){
-                document.getElementById("comentario").value=pedidoActual[idBurger].descripcion
+            if(pedidoActual[idDeBurger].descripcion != "-"){
+                document.getElementById("comentario").value=pedidoActual[idDeBurger].descripcion
             }
-            if(pedidoActual[idBurger].extras=="Ext. cheddar"){
+            if(pedidoActual[idDeBurger].extras=="Ext. cheddar"){
                 document.getElementById("cbox1").checked=true
-            }else if(pedidoActual[idBurger].extras=="Ext. bacon"){
+            }else if(pedidoActual[idDeBurger].extras=="Ext. bacon"){
                 document.getElementById("cbox2").checked=true
-            }else if(pedidoActual[idBurger].extras=="Ext. chd/bac"){
+            }else if(pedidoActual[idDeBurger].extras=="Ext. chd/bac"){
                 document.getElementById("cbox3").checked=true
             }
         }
@@ -180,8 +182,10 @@ function confirmarExtras(){
 
         // Lee todas las opciones de checkboxs y textbox para agregar o cambiar extras y aclaraciones
         if(id==variableNumero){
-            if (variableBorrado!=0){
-                id=id-variableBorrado;
+            if(pedidoActual.length!=1){
+                if (variableBorrado!=0){
+                    id=id-variableBorrado;
+                }
             }
             if(document.getElementById("cbox1").checked){
                 if(pedidoActual[id].extras=="Ext. cheddar"){

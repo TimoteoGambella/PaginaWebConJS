@@ -109,9 +109,9 @@ function extraDescripcion(valor){
 
     // Cambio el valor de la variable y muestro el div de extras
     variableDivAbierto="si";
-    let pantallaNueva = document.getElementById("extraDesc");
-    pantallaNueva.classList.remove("d-none");
-    pantallaNueva.classList.add("extraDesc");
+
+    $(".extraDesc").show()
+
     // Busco los valores del producto para insertarlos en el nuevo div y le saco la funcion al boton de confirmar el pedido
     let burger = valor.previousSibling;
     let nombreBurger = burger.lastElementChild;
@@ -150,9 +150,8 @@ function extraDescripcion(valor){
 
 // Funcion para cerrar el div de Extras y Aclaraciones
 function cerrarExtraDesc(){
-    let pantallaNueva = document.getElementById("extraDesc");
-    pantallaNueva.classList.remove("extraDesc");
-    pantallaNueva.classList.add("d-none");
+
+    $(".extraDesc").hide()
 
     // Agrego la funcion al boton de confirmar pedido
     botonConfirmarPedido.onclick=function _confirm(){
@@ -256,9 +255,7 @@ function confirmarExtras(){
     document.getElementById("comentario").value="";
 
     // Cierro el div de extras y aclaraciones
-    let pantallaNueva = document.getElementById("extraDesc");
-    pantallaNueva.classList.remove("extraDesc");
-    pantallaNueva.classList.add("d-none");
+    $(".extraDesc").hide()
 
     // Le doy la funcion al boton de confirmar pedido
     botonConfirmarPedido.onclick=function _confirm(){
@@ -346,7 +343,7 @@ function confirmarPedido(nombre,direccion,pago){
 function datos(){
     
     if(pedidoActual!=""){
-        document.getElementById("pedidoConfirmar").style.display="inline";
+        $("#pedidoConfirmar").show()
         document.getElementById("datoPrecio").innerHTML="TOTAL: "+(document.getElementById("_fin")).innerHTML;
         variableDivAbierto="si";
     }else{
@@ -357,7 +354,7 @@ function datos(){
 // Funcion para cerrar el div de los datos
 function cerrarDatos(){
     variableDivAbierto="no";
-    document.getElementById("pedidoConfirmar").style.display="none";
+    $("#pedidoConfirmar").hide();
 }
 
 // Funcion para confirmar los datos cargados

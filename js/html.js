@@ -69,8 +69,11 @@ function agregarCarrito(burger,tipo,precio){
 
 // Funcion para mostrar el div del carrito
 function mostrarCarrito(){
-    let divCarrito = document.getElementById("carritoDePedidos");
-    divCarrito.classList.add("d-inline");
+
+    // Saco el boton del carrito y muestro el carrito
+    $("#botonCarrito").hide()
+    $("#carritoDePedidos").show()
+
     let menuDerecha = document.getElementsByName('menuDerecha');
     // Reorganizo la pagina
     for(let i = 0; i < menuDerecha.length; i++){
@@ -81,17 +84,14 @@ function mostrarCarrito(){
         menuDerecha[i].classList.remove("menuD");
         menuDerecha[i].classList.add("menuI");
     }
-    // Saco el boton del carrito
-    let botonCarrito = document.getElementById("botonAbrir");
-    botonCarrito.classList.remove("d-inline");
-    botonCarrito.classList.add("d-none");
 }
 
 // Funcion para cerrar el carrito
 function ocultarCarrito(){
-    let divCarrito = document.getElementById("carritoDePedidos");
-    divCarrito.classList.remove("d-inline");
-    divCarrito.classList.add("d-none");
+    // Muestro el boton del carrito y saco el carrito
+    $("#botonCarrito").show()
+    $("#carritoDePedidos").hide()
+
     let menuDerecha = document.getElementsByName('menuDerecha');
     // Reorganizo la pagina
     for(let i = 0; i < menuDerecha.length; i++){
@@ -102,10 +102,6 @@ function ocultarCarrito(){
         menuDerecha[i].classList.remove("menuI");
         menuDerecha[i].classList.add("menuD");
     }
-    // Muestro el boton del carrito
-    let botonCarrito = document.getElementById("botonAbrir");
-    botonCarrito.classList.remove("d-none");
-    botonCarrito.classList.add("d-inline");
 }
 
 // Funcion para agregar Extras o Aclaraciones

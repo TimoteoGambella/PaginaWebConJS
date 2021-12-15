@@ -71,8 +71,8 @@ function agregarCarrito(burger,tipo,precio){
 function mostrarCarrito(){
 
     // Saco el boton del carrito y muestro el carrito
-    $("#botonCarrito").hide()
-    $("#carritoDePedidos").show()
+    $("#botonCarrito").fadeOut(0700)
+    $("#carritoDePedidos").fadeIn(0700)
 
     let menuDerecha = document.getElementsByName('menuDerecha');
     // Reorganizo la pagina
@@ -89,8 +89,8 @@ function mostrarCarrito(){
 // Funcion para cerrar el carrito
 function ocultarCarrito(){
     // Muestro el boton del carrito y saco el carrito
-    $("#botonCarrito").show()
-    $("#carritoDePedidos").hide()
+    $("#botonCarrito").fadeIn(0700)
+    $("#carritoDePedidos").fadeOut(0700)
 
     let menuDerecha = document.getElementsByName('menuDerecha');
     // Reorganizo la pagina
@@ -110,7 +110,7 @@ function extraDescripcion(valor){
     // Cambio el valor de la variable y muestro el div de extras
     variableDivAbierto="si";
 
-    $(".extraDesc").show()
+    $(".extraDesc").fadeIn(0700)
 
     // Busco los valores del producto para insertarlos en el nuevo div y le saco la funcion al boton de confirmar el pedido
     let burger = valor.previousSibling;
@@ -151,7 +151,7 @@ function extraDescripcion(valor){
 // Funcion para cerrar el div de Extras y Aclaraciones
 function cerrarExtraDesc(){
 
-    $(".extraDesc").hide()
+    $(".extraDesc").fadeOut(0700)
 
     // Agrego la funcion al boton de confirmar pedido
     botonConfirmarPedido.onclick=function _confirm(){
@@ -343,7 +343,7 @@ function confirmarPedido(nombre,direccion,pago){
 function datos(){
     
     if(pedidoActual!=""){
-        $("#pedidoConfirmar").show()
+        $("#pedidoConfirmar").fadeIn(0700)
         document.getElementById("datoPrecio").innerHTML="TOTAL: "+(document.getElementById("_fin")).innerHTML;
         variableDivAbierto="si";
     }else{
@@ -354,7 +354,7 @@ function datos(){
 // Funcion para cerrar el div de los datos
 function cerrarDatos(){
     variableDivAbierto="no";
-    $("#pedidoConfirmar").hide();
+    $("#pedidoConfirmar").fadeOut(0700);
 }
 
 // Funcion para confirmar los datos cargados

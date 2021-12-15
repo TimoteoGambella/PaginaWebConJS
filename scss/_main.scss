@@ -254,14 +254,11 @@ textarea{
 //-------------------------MENU--------------------------//
 //-----------------------------MENU POR IZQUIERDA----------------------------//
 .menuI{
-	border: 8px solid #FFB908;
+	border: 10px solid #FFB908;
 	height: 30vw;
 	width: 55vw;
 	margin: 0.3vw 0vw 3.5vw 1.4vw;
 	border-radius: 5.8vw;
-	&:hover{
-		border: 8px solid white;
-	}
 	img{
 		width: 17vw;
 		padding: 2vw;
@@ -290,9 +287,6 @@ textarea{
 		li{
 			padding: 2px;
 			cursor: pointer;
-			&:hover{
-				color: white;
-			}
 		}
 	}
 }
@@ -466,7 +460,7 @@ textarea{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 220px;
+		margin-left: 200px;
 		border-radius: 5px;
 		margin-top: 30px;
 		margin-bottom: 5px;
@@ -547,9 +541,6 @@ textarea{
 	width: 55vw;
 	margin: 0.3vw 1.4vw 3.5vw 0vw;
 	border-radius: 5.8vw;
-	&:hover{
-		border: 8px solid white;
-	}
 	img{
 		width: 20vw;
 		padding: 2vw;

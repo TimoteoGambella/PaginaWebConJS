@@ -7,6 +7,30 @@ var variableDivAbierto="no";
 var burgerParaExtra = "";
 var  variableBorrado = 0;
 
+
+$("div div #precios li").mouseenter(function(){
+    $(this).css("color","white")
+})
+$("div div #precios li").mouseleave(function(){
+    $(this).css("color","#E3B237")
+})
+
+$(".menuD").mouseenter(function(){
+    $(this).css("border","8px solid white")
+})
+$(".menuD").mouseleave(function(){
+    $(this).css("border","10px solid #FFB908")
+})
+
+$(".menuI").mouseenter(function(){
+    $(this).css("border","8px solid white")
+})
+$(".menuI").mouseleave(function(){
+    $(this).css("border","10px solid #FFB908")
+})
+
+
+
 // Funcion para agregar productos al pedido
 function agregarCarrito(burger,tipo,precio){
 

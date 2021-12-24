@@ -328,13 +328,13 @@ function verCheckBox(valor){
 }
 
 // Funcion para confirmar el pedido y los datos
-function confirmarPedido(nombre,direccion,pago){
+function confirmarPedido(nombre,direccion,telefono,pago){
     // Chequeo que haya objetos en el array
     if(pedidoActual==""){
         return;
     }else{
         // Genero el objeto de la clase pedido
-        let pedido = new Pedido(nombre.value,direccion.value,pago,pedidoActual);
+        let pedido = new Pedido(nombre.value,direccion.value,telefono.value,pago,pedidoActual);
 
         // Busco en el localStorage el ultimo numero de pedido y genero uno nuevo pasandole el stringify del array
         let localStoragePedido = localStorage.length;
@@ -358,6 +358,7 @@ function confirmarPedido(nombre,direccion,pago){
     document.getElementById("datoDireccion").value="";
     document.getElementById("efectivo").checked=true;
     document.getElementById("pedidoConfirmar").style.display="none";
+    document.getElementById("datoTelefono").value=""
     numBurger=0;
     // Cambio la variable
     variableDivAbierto="no";
@@ -386,10 +387,13 @@ function confirmarDatos(){
     // Tomo los valores necesarios y chequeo si estan completos
     let nombre = document.getElementById("datoNombre");
     let direccion = document.getElementById("datoDireccion");
+    let telefono = document.getElementById("datoTelefono");
     if(nombre.value==""){
         alert("Debe ingresar su nombre");
     }else if(direccion.value==""){
         alert("Debe ingresar su direccion");
+    }else if(telefono.value==""){
+        alert("Debe ingresar su telefono");
     }else{
         let formaDePago = document.getElementById("efectivo").checked;
         let pago = "EFECTIVO";
@@ -402,7 +406,7 @@ function confirmarDatos(){
             }
         }
         // LLamo a la funcion confirmarPedido
-        confirmarPedido(nombre,direccion,pago);
+        confirmarPedido(nombre,direccion,telefono,pago);
         alert("Su pedido fue realizado");
     }
 }

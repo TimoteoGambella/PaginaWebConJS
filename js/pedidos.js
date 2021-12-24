@@ -10,9 +10,10 @@ class Burgers{
 }
 
 class Pedido{
-    constructor(cliente,direccion,pago,pedido){
+    constructor(cliente,direccion,telefono,pago,pedido){
     this.cliente=cliente;
     this.direccion=direccion;
+    this.telefono=telefono;
     this.pago=pago;
     this.pedido=pedido;
     }

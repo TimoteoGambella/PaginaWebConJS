@@ -417,8 +417,20 @@ function confirmarDatos(){
                 pago="MERCADOPAGO";
             }
         }
-        // LLamo a la funcion confirmarPedido
-        confirmarPedido(nombre,direccion,telefono,pago);
-        alert("Su pedido fue realizado");
+
+        //API para validar telefono
+        let urlDatos=`
+            http://apilayer.net/api/validate?access_key=b0700b976ac4193bf0ab9a5c488cb6d8&number=${telefono.value}&country_code=AR&format=1"
+        `
+        $.get(urlDatos,function(r,e){
+            if(r.valid===false){
+                alert("Ha introducido mal su número de telefono")
+                document.getElementById("datoTelefono").value=""
+            }else if(r.valid===true){
+                // LLamo a la funcion confirmarPedido
+                confirmarPedido(nombre,direccion,telefono,pago);
+                alert("Su pedido fue realizado");
+            }
+        })
     }
 }

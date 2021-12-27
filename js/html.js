@@ -9,30 +9,28 @@ var  variableBorrado = 0;
 
 
 $("div div #precios li").mouseenter(function(){
-    $(this).css("color","white")
+    $(this).css("color","white");
 })
 $("div div #precios li").mouseleave(function(){
-    $(this).css("color","#E3B237")
+    $(this).css("color","#E3B237");
 })
 
 $(".menuD").mouseenter(function(){
-    $(this).css("border","8px solid white")
+    $(this).css("border","8px solid white");
 })
 $(".menuD").mouseleave(function(){
-    $(this).css("border","10px solid #FFB908")
+    $(this).css("border","10px solid #FFB908");
 })
 
 $(".menuI").mouseenter(function(){
-    $(this).css("border","8px solid white")
+    $(this).css("border","8px solid white");
 })
 $(".menuI").mouseleave(function(){
-    $(this).css("border","10px solid #FFB908")
+    $(this).css("border","10px solid #FFB908");
 })
 
-
-
 // Funcion para agregar productos al pedido
-function agregarCarrito(burger,tipo,precio){
+function agregarCarrito(burger,tipo){
 
     // Chequeo si la variable marca si o no
     if(variableDivAbierto=="si"){
@@ -48,55 +46,69 @@ function agregarCarrito(burger,tipo,precio){
     let p2 = document.createElement("p");
     let pExtra = document.createElement("p");
     let pX = document.createElement("p");
+    let precio = 0;
 
-    p1.textContent=burger + " " + tipo;
-    p2.textContent=precio;
-    pExtra.textContent="+";
-    pX.textContent="X";
+    // USO JSON PARA EXTRAER LA HAMBURGUESA DEL ARCHIVO
+    $.get("data_json.json",function (r,e){
+        for(let busqueda of r){
+            if(e==="success"){
+                if(busqueda.burger===burger+" "+tipo){
+                    p1.textContent=busqueda.burger;
+                    p2.textContent=busqueda.precio;
+                    precio=busqueda.precio;
+                    pExtra.textContent="+";
+                    pX.textContent="X";
+                }
+            }else{
+                alert("No se puede hacer pedidos");
+            }
+        }
+    })
 
-    p1.className="nombreBurger";
-    p1.id="nombreBurger";
-    div2.className="nombreTipoBurger";
-    p2.className="precioBurger";
-    pX.className="signoPedidoCancelar";
-    pX.onclick= function cancelarBurger(valor){
-        _cancelarBurger(this);
-    }
-    pExtra.className="extrasBurger";
-    pExtra.onclick= function a_ExtraDescripcion(valor){
-        extraDescripcion(this);
-    }
-    div1.className="numeroDeBurger"+numeroDeBurger;
-    div1.id=numBurger;
-    numeroDeBurger=numeroDeBurger+1;
-
-    // Armo la relacion entre los elementos
-    div2.appendChild(pX);
-    div2.appendChild(p1);
-    div1.appendChild(div2);
-    div1.appendChild(pExtra);
-    div1.appendChild(p2);
-    document.querySelector(".fil-1 li").appendChild(div1);
-    // Cambio el valor total
-    let precioFinal = document.getElementById("_fin");
-    if (precioFinal.innerHTML === "---"){
-        precioFinal = precio;
-        document.getElementById("_fin").innerHTML=precio;
-    }else{
-        document.getElementById("_fin").innerHTML = parseInt(precioFinal.innerHTML) + precio;
-        
-    }
-    //Creo la clase con los datos del producto y lo pusheo al pedidoActual 
-    pedidoActual.push(new Burgers(burger+" "+tipo,precio,"-","-"));
-    numBurger=numBurger+1;
+    setTimeout(function(){
+        p1.className="nombreBurger";
+        p1.id="nombreBurger";
+        div2.className="nombreTipoBurger";
+        p2.className="precioBurger";
+        pX.className="signoPedidoCancelar";
+        pX.onclick= function cancelarBurger(valor){
+            _cancelarBurger(this);
+        }
+        pExtra.className="extrasBurger";
+        pExtra.onclick= function a_ExtraDescripcion(valor){
+            extraDescripcion(this);
+        }
+        div1.className="numeroDeBurger"+numeroDeBurger;
+        div1.id=numBurger;
+        numeroDeBurger=numeroDeBurger+1;
+    
+        // Armo la relacion entre los elementos
+        div2.appendChild(pX);
+        div2.appendChild(p1);
+        div1.appendChild(div2);
+        div1.appendChild(pExtra);
+        div1.appendChild(p2);
+        document.querySelector(".fil-1 li").appendChild(div1);
+        // Cambio el valor total
+        let precioFinal = document.getElementById("_fin");
+        if (precioFinal.innerHTML === "---"){
+            precioFinal = precio;
+            document.getElementById("_fin").innerHTML=precio;
+        }else{
+            document.getElementById("_fin").innerHTML = parseInt(precioFinal.innerHTML) + precio;
+            
+        }
+        //Creo la clase con los datos del producto y lo pusheo al pedidoActual 
+        pedidoActual.push(new Burgers(burger+" "+tipo,precio,"-","-"));
+        numBurger=numBurger+1}, 0500);
 }
 
 // Funcion para mostrar el div del carrito
 function mostrarCarrito(){
 
     // Saco el boton del carrito y muestro el carrito
-    $("#botonCarrito").fadeOut(0700)
-    $("#carritoDePedidos").fadeIn(0700)
+    $("#botonCarrito").fadeOut(0700);
+    $("#carritoDePedidos").fadeIn(0700);
 
     let menuDerecha = document.getElementsByName('menuDerecha');
     // Reorganizo la pagina
@@ -113,8 +125,8 @@ function mostrarCarrito(){
 // Funcion para cerrar el carrito
 function ocultarCarrito(){
     // Muestro el boton del carrito y saco el carrito
-    $("#botonCarrito").fadeIn(0700)
-    $("#carritoDePedidos").fadeOut(0700)
+    $("#botonCarrito").fadeIn(0700);
+    $("#carritoDePedidos").fadeOut(0700);
 
     let menuDerecha = document.getElementsByName('menuDerecha');
     // Reorganizo la pagina
@@ -134,15 +146,15 @@ function extraDescripcion(valor){
     // Cambio el valor de la variable y muestro el div de extras
     variableDivAbierto="si";
 
-    $(".extraDesc").fadeIn(0700)
+    $(".extraDesc").fadeIn(0700);
 
     // Busco los valores del producto para insertarlos en el nuevo div y le saco la funcion al boton de confirmar el pedido
     let burger = valor.previousSibling;
     let nombreBurger = burger.lastElementChild;
 
     // Si tiene extras o aclaraciones ya cargadas, las agrego al div
-    let array = burger.parentNode
-    idDeBurger = array.id
+    let array = burger.parentNode;
+    idDeBurger = array.id;
 
     for(producto of pedidoActual){
         let variableNumero = producto.numBurger;
@@ -154,14 +166,14 @@ function extraDescripcion(valor){
                 }
             }
             if(pedidoActual[idDeBurger].descripcion != "-"){
-                document.getElementById("comentario").value=pedidoActual[idDeBurger].descripcion
+                document.getElementById("comentario").value=pedidoActual[idDeBurger].descripcion;
             }
             if(pedidoActual[idDeBurger].extras=="Ext. cheddar"){
-                document.getElementById("cbox1").checked=true
+                document.getElementById("cbox1").checked=true;
             }else if(pedidoActual[idDeBurger].extras=="Ext. bacon"){
-                document.getElementById("cbox2").checked=true
+                document.getElementById("cbox2").checked=true;
             }else if(pedidoActual[idDeBurger].extras=="Ext. chd/bac"){
-                document.getElementById("cbox3").checked=true
+                document.getElementById("cbox3").checked=true;
             }
         }
     }
@@ -175,7 +187,7 @@ function extraDescripcion(valor){
 // Funcion para cerrar el div de Extras y Aclaraciones
 function cerrarExtraDesc(){
 
-    $(".extraDesc").fadeOut(0700)
+    $(".extraDesc").fadeOut(0700);
 
     // Agrego la funcion al boton de confirmar pedido
     botonConfirmarPedido.onclick=function _confirm(){

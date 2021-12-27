@@ -1,0 +1,142 @@
+[
+    {
+        "burger": "RAGNAR SIMPLE",
+        "precio":500
+    },
+    {
+        "burger": "RAGNAR DOBLE",
+        "precio":600
+    },
+    {
+        "burger": "RAGNAR TRIPLE",
+        "precio":700
+    },
+    {
+        "burger": "RAGNAR CUADRUPLE",
+        "precio":800
+    },
+    {
+        "burger": "ODIN SIMPLE",
+        "precio":550
+    },
+    {
+        "burger": "ODIN DOBLE",
+        "precio":650
+    },
+    {
+        "burger": "ODIN TRIPLE",
+        "precio":750
+    },
+    {
+        "burger": "ODIN CUADRUPLE",
+        "precio":850
+    },
+    {
+        "burger": "OLAF SIMPLE",
+        "precio":450
+    },
+    {
+        "burger": "OLAF DOBLE",
+        "precio":550
+    },
+    {
+        "burger": "OLAF TRIPLE",
+        "precio":650
+    },
+    {
+        "burger": "OLAF CUADRUPLE",
+        "precio":750
+    },
+    {
+        "burger": "THOR SIMPLE",
+        "precio":850
+    },
+    {
+        "burger": "THOR DOBLE",
+        "precio":950
+    },
+    {
+        "burger": "THOR TRIPLE",
+        "precio":1050
+    },
+    {
+        "burger": "THOR CUADRUPLE",
+        "precio":1150
+    },
+    {
+        "burger": "VALHALLA SIMPLE",
+        "precio":420
+    },
+    {
+        "burger": "VALHALLA DOBLE",
+        "precio":520
+    },
+    {
+        "burger": "VALHALLA TRIPLE",
+        "precio":620
+    },
+    {
+        "burger": "VALHALLA CUADRUPLE",
+        "precio":720
+    },
+    {
+        "burger": "LAGHERTA SIMPLE",
+        "precio":750
+    },
+    {
+        "burger": "LAGHERTA DOBLE",
+        "precio":850
+    },
+    {
+        "burger": "LAGHERTA TRIPLE",
+        "precio":950
+    },
+    {
+        "burger": "LAGHERTA CUADRUPLE",
+        "precio":1050
+    },
+    {
+        "burger": "UBBE SIMPLE",
+        "precio":420
+    },
+    {
+        "burger": "UBBE DOBLE",
+        "precio":520
+    },
+    {
+        "burger": "UBBE TRIPLE",
+        "precio":620
+    },
+    {
+        "burger": "UBBE CUADRUPLE",
+        "precio":720
+    },
+    {
+        "burger": "ASTRID SIMPLE",
+        "precio":390
+    },
+    {
+        "burger": "ASTRID DOBLE",
+        "precio":490
+    },
+    {
+        "burger": "ASTRID TRIPLE",
+        "precio":590
+    },
+    {
+        "burger": "ASTRID CUADRUPLE",
+        "precio":690
+    },
+    {
+        "burger": "MUZZARELITAS SIMPLE",
+        "precio":380
+    },
+    {
+        "burger": "MUZZARELITAS MEDIANA",
+        "precio":480
+    },
+    {
+        "burger": "MUZZARELITAS GRANDE",
+        "precio":580
+    }
+]
